@@ -1,2 +1,9 @@
 #!/bin/bash
-gcc -S -masm=intel $CFILE
+
+CFILE="main.c"  # Replace with the name of your C file
+ASMFILE="${CFILE%.c}.s"
+
+gcc -S -masm=intel $CFILE -o $ASMFILE
+
+echo "Assembly code generated and saved as $ASMFILE."
+
