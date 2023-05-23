@@ -1,26 +1,32 @@
 #include <stdio.h>
 
-int main(void) {
-    int fib[50];  // Array to store Fibonacci numbers
+/**
+ * main - prints the first 50 Fibonacci numbers, starting with 1 and 2
+ * followed by a new line
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	long int i, j, k, next;
 
-    // Initialize the first two Fibonacci numbers
-    fib[0] = 1;
-    fib[1] = 2;
+	j = 1;
 
-    // Compute the remaining Fibonacci numbers
-    for (int i = 2; i < 50; i++) {
-        fib[i] = fib[i - 1] + fib[i - 2];
-    }
+	k = 2;
 
-    // Print the Fibonacci numbers separated by comma and space
-    for (int i = 0; i < 50; i++) {
-        printf("%d", fib[i]);
-        if (i != 49) {
-            printf(", ");
-        }
-    }
-    printf("\n");
+	for (i = 1; i <= 50; ++i)
+	{
+		if (j != 20365011074)
+		{
+			printf("%ld, ", j);
+		} else
+		{
+			printf("%ld\n", j);
+		}
+		next = j + k;
+		j = k;
+		k = next;
+	}
 
-    return 0;
+	return (0);
 }
 
