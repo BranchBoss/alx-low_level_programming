@@ -1,22 +1,24 @@
-#include "main.h"
 #include <stdio.h>
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
+char *_strcat(char *dest, const char *src)
 {
-    char s1[98] = "Hello ";
-    char s2[] = "World!\n";
-    char *ptr;
+    char *ptr = dest;
 
-    printf("%s\n", s1);
-    printf("%s", s2);
-    ptr = _strcat(s1, s2);
-    printf("%s", s1);
-    printf("%s", s2);
-    printf("%s", ptr);
-    return (0);
+    // Find the end of the destination string
+    while (*ptr != '\0') {
+        ptr++;
+    }
+
+    // Append the source string to the destination string
+    while (*src != '\0') {
+        *ptr = *src;
+        ptr++;
+        src++;
+    }
+
+    // Add the null terminator at the end
+    *ptr = '\0';
+
+    return dest;
 }
+
